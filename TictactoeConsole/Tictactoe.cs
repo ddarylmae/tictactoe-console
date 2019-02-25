@@ -2,18 +2,25 @@ namespace TictactoeTests
 {
     public class Tictactoe
     {
-        public char[,] board = new char[3, 3];
+        public char[,] Board = new char[3, 3];
+        public char CurrentPlayer { get; set; }
+        public char Winner { get; set; }
+        public bool GameEnded { get; set; }
 
         public Tictactoe()
         {
-            board[0, 0] = '.';
-            board[0, 1] = '.';
-            board[0, 2] = '.';
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
+                {
+                    Board[row, column] = '.';
+                }
+            }
+
+            CurrentPlayer = 'X';
+            Winner = ' ';
         }
 
-//        public void InitialiseBoardWithDots()
-//        {
-//            board[0,0]
-//        }
+        
     }
 }
