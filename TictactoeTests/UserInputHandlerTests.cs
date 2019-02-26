@@ -3,12 +3,12 @@ using TicTacToeConsole;
 
 namespace TicTacToeTests
 {
-    public class PlayerTests
+    public class UserInputHandlerTests
     {
         [Fact]
         public void ValidCoordinateInputShouldReturnTrue()
         {
-            var player = new Player();
+            var player = new UserInputHandler();
             
             Assert.True(player.ValidateCoordinates("1,1"));
         }
@@ -16,7 +16,7 @@ namespace TicTacToeTests
         [Fact]
         public void InvalidCoordinateInputShouldReturnFalse()
         {
-            var player = new Player();
+            var player = new UserInputHandler();
             
             Assert.False(player.ValidateCoordinates("1,4"));
         }
@@ -24,7 +24,7 @@ namespace TicTacToeTests
         [Fact]
         public void QLetterInputShouldReturnTrue()
         {
-            var player = new Player();
+            var player = new UserInputHandler();
             
             Assert.True(player.ValidateCoordinates("q"));
         }

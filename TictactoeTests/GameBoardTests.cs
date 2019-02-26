@@ -33,6 +33,33 @@ namespace TicTacToeTests
         }
 
         [Fact]
+        public void ShouldReturnTrueWhenBoardHasUnsetCoordinate()
+        {
+            var board = new GameBoard();
+
+            var hasUnsetCoordinate = board.CheckHasUnsetCoordinate();
+            
+            Assert.True(hasUnsetCoordinate);
+        }
+        
+        [Fact]
+        public void ShouldReturnFalseWhenBoardHasNoUnsetCoordinate()
+        {
+            var board = new GameBoard();
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
+                {
+                    board.Board[row, column] = 'X';
+                }
+            }
+
+            var hasUnsetCoordinate = board.CheckHasUnsetCoordinate();
+            
+            Assert.False(hasUnsetCoordinate);
+        }
+
+        [Fact]
         public void ShouldUpdateBoardCoordinate()
         {
             var board = new GameBoard();

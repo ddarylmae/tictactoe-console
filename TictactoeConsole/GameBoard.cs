@@ -37,5 +37,18 @@ namespace TicTacToeConsole
 
             return false;
         }
+
+        public bool CheckHasUnsetCoordinate()
+        {
+            var boardHasUnsetCoordinate = false;
+            
+            // TODO refactor (stop loop when an unset element is found or reached end of array
+            foreach (var element in Board)
+            {
+                boardHasUnsetCoordinate = element == '.';
+            }
+
+            return boardHasUnsetCoordinate;
+        }
     }
 }

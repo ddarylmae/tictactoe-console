@@ -1,6 +1,6 @@
 namespace TicTacToeConsole
 {
-    public class Player
+    public class UserInputHandler
     {
         public bool ValidateCoordinates(string playerInput)
         {
