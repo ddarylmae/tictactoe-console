@@ -33,17 +33,17 @@ namespace TicTacToeTests
         }
 
         [Fact]
-        public void ShouldReturnTrueWhenBoardHasUnsetCoordinate()
+        public void ShouldReturnTrueWhenBoardHasUnmarkedCoordinate()
         {
             var board = new GameBoard();
 
-            var hasUnsetCoordinate = board.CheckHasUnsetCoordinate();
+            var hasUnmarkedCoordinate = board.CheckHasUnmarkedCoordinate();
             
-            Assert.True(hasUnsetCoordinate);
+            Assert.True(hasUnmarkedCoordinate);
         }
         
         [Fact]
-        public void ShouldReturnFalseWhenBoardHasNoUnsetCoordinate()
+        public void ShouldReturnFalseWhenBoardHasNoUnmarkedCoordinate()
         {
             var board = new GameBoard();
             for (int row = 0; row < 3; row++)
@@ -54,9 +54,9 @@ namespace TicTacToeTests
                 }
             }
 
-            var hasUnsetCoordinate = board.CheckHasUnsetCoordinate();
+            var hasUnmarkedCoordinate = board.CheckHasUnmarkedCoordinate();
             
-            Assert.False(hasUnsetCoordinate);
+            Assert.False(hasUnmarkedCoordinate);
         }
 
         [Fact]

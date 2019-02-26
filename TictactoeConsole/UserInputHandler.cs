@@ -2,7 +2,7 @@ namespace TicTacToeConsole
 {
     public class UserInputHandler
     {
-        public bool ValidateCoordinates(string playerInput)
+        public bool ValidateInput(string playerInput)
         {
             var coordinates = playerInput.Split(',');
             
@@ -16,6 +16,11 @@ namespace TicTacToeConsole
             }
             
             return false;
+        }
+
+        public bool HasUserQuit(string input)
+        {
+            return input.Equals("q");
         }
     }
 }

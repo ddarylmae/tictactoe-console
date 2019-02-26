@@ -8,25 +8,41 @@ namespace TicTacToeTests
         [Fact]
         public void ValidCoordinateInputShouldReturnTrue()
         {
-            var player = new UserInputHandler();
+            var inputHandler = new UserInputHandler();
             
-            Assert.True(player.ValidateCoordinates("1,1"));
+            Assert.True(inputHandler.ValidateInput("1,1"));
         }
         
         [Fact]
         public void InvalidCoordinateInputShouldReturnFalse()
         {
-            var player = new UserInputHandler();
+            var inputHandler = new UserInputHandler();
             
-            Assert.False(player.ValidateCoordinates("1,4"));
+            Assert.False(inputHandler.ValidateInput("1,4"));
         }
 
         [Fact]
         public void QLetterInputShouldReturnTrue()
         {
-            var player = new UserInputHandler();
+            var inputHandler = new UserInputHandler();
             
-            Assert.True(player.ValidateCoordinates("q"));
+            Assert.True(inputHandler.ValidateInput("q"));
+        }
+
+        [Fact]
+        public void ShouldReturnTrueIfUserHasQuit()
+        {
+            var inputHandler = new UserInputHandler();
+            
+            Assert.True(inputHandler.HasUserQuit("q"));
+        }
+        
+        [Fact]
+        public void ShouldReturnFalseIfUserHasNotQuit()
+        {
+            var inputHandler = new UserInputHandler();
+            
+            Assert.False(inputHandler.HasUserQuit("1,1"));
         }
     }
 }
