@@ -20,7 +20,5 @@ namespace TictactoeTests
             CurrentPlayer = 'X';
             Winner = ' ';
         }
-
-        
     }
 }
