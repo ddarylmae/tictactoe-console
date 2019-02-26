@@ -1,13 +1,14 @@
 using Xunit;
+using TicTacToeConsole;
 
-namespace TictactoeTests
+namespace TicTacToeTests
 {
-    public class TictactoeTests
+    public class TicTacToeTests
     {
         [Fact]
         public void ShouldStartWithPlayerX()
         {
-            var game = new Tictactoe();
+            var game = new TicTacToe();
             
             Assert.Equal('X', game.CurrentPlayer);
         }
@@ -15,7 +16,7 @@ namespace TictactoeTests
         [Fact]
         public void ShouldInitialiseWithNoWinner()
         {
-            var game = new Tictactoe();
+            var game = new TicTacToe();
             
             Assert.Equal(' ', game.Winner);
         }
@@ -23,9 +24,9 @@ namespace TictactoeTests
         [Fact]
         public void ShouldInitialiseWithGameNotEnded()
         {
-            var game = new Tictactoe();
+            var game = new TicTacToe();
             
-            Assert.Equal(false, game.GameEnded);
+            Assert.False(game.GameEnded);
         }
     }
     

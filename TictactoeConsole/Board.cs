@@ -1,4 +1,4 @@
-namespace TictactoeTests
+namespace TicTacToeConsole
 {
     public class Board
     {

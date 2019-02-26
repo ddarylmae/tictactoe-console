@@ -1,6 +1,7 @@
 using Xunit;
+using TicTacToeConsole;
 
-namespace TictactoeTests
+namespace TicTacToeTests
 {
     public class BoardTests
     {
