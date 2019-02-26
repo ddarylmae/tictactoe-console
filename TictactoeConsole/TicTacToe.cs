@@ -11,5 +11,10 @@ namespace TicTacToeConsole
             CurrentPlayer = 'X';
             Winner = ' ';
         }
+
+        public void SwitchPlayer()
+        {
+            CurrentPlayer = CurrentPlayer == 'X' ? 'O' : 'X';
+        }
     }
 }

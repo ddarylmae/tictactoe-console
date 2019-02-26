@@ -28,6 +28,27 @@ namespace TicTacToeTests
             
             Assert.False(game.GameEnded);
         }
+
+        [Fact]
+        public void ShouldSwitchToPlayerOWhenCurrentPlayerIsX()
+        {
+            var game = new TicTacToe {CurrentPlayer = 'X'};
+            
+            game.SwitchPlayer();
+            
+            Assert.Equal('O', game.CurrentPlayer);
+        }
+        
+        [Fact]
+        public void ShouldSwitchToPlayerXWhenCurrentPlayerIsO()
+        {
+            var game = new TicTacToe {CurrentPlayer = 'O'};
+            
+            game.SwitchPlayer();
+            
+            Assert.Equal('X', game.CurrentPlayer);
+        }
+        
     }
     
 }
