@@ -16,9 +16,15 @@ namespace TicTacToeConsole
             }
         }
 
-        public void UpdateBoard(int row, int column, char currentPlayer)
+        public bool UpdateBoard(int row, int column, char currentPlayer)
         {
-            Board[row-1, column-1] = currentPlayer;
+            if (!IsCoordinateMarked(row, column))
+            {
+                Board[row-1, column-1] = currentPlayer;
+                return true;
+            }
+
+            return false;
         }
 
         public bool IsWinningMove(char currentPlayer)
@@ -49,6 +55,11 @@ namespace TicTacToeConsole
             }
 
             return boardHasUnsetCoordinate;
+        }
+
+        public bool IsCoordinateMarked(int row, int column)
+        {
+            return Board[row - 1, column - 1] != '.';
         }
     }
 }

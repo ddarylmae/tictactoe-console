@@ -70,6 +70,27 @@ namespace TicTacToeTests
         }
 
         [Fact]
+        public void ShouldReturnTrueWhenUpdatingUnmarkedCoordinate()
+        {
+            var board = new GameBoard();
+            
+            var hasUpdatedBoard = board.UpdateBoard(1,1,'X');
+            
+            Assert.True(hasUpdatedBoard);
+        }
+        
+        [Fact]
+        public void ShouldReturnFalseWhenUpdatingMarkedCoordinate()
+        {
+            var board = new GameBoard();
+            board.Board[0, 0] = 'X';
+            
+            var hasUpdatedBoard = board.UpdateBoard(1,1,'X');
+            
+            Assert.False(hasUpdatedBoard);
+        }
+
+        [Fact]
         public void ShouldReturnTrueWhenWinningMove()
         {
             var board = new GameBoard();
