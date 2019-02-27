@@ -33,6 +33,16 @@ namespace TicTacToeTests
         }
 
         [Fact]
+        public void ShouldReturnElementAtCoordinate()
+        {
+            var board = new GameBoard();
+
+            var actualElement = board.GetElementAtCoordinate(1, 1);
+            
+            Assert.Equal('.', actualElement);
+        }
+
+        [Fact]
         public void ShouldReturnTrueWhenBoardHasUnmarkedCoordinate()
         {
             var board = new GameBoard();

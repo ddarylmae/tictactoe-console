@@ -59,7 +59,12 @@ namespace TicTacToeConsole
 
         public bool IsCoordinateMarked(int row, int column)
         {
-            return Board[row - 1, column - 1] != '.';
+            return GetElementAtCoordinate(row,column) != '.';
+        }
+
+        public char GetElementAtCoordinate(int row, int column)
+        {
+            return Board[row - 1, column - 1];
         }
     }
 }
