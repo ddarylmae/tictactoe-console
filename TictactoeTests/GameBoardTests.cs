@@ -50,7 +50,7 @@ namespace TicTacToeTests
         {
             var board = new GameBoard();
 
-            var hasUnmarkedCoordinate = board.CheckHasUnmarkedCoordinate();
+            var hasUnmarkedCoordinate = board.HasUnmarkedCoordinate();
             
             Assert.True(hasUnmarkedCoordinate);
         }
@@ -68,7 +68,7 @@ namespace TicTacToeTests
                 }
             }
 
-            var hasUnmarkedCoordinate = board.CheckHasUnmarkedCoordinate();
+            var hasUnmarkedCoordinate = board.HasUnmarkedCoordinate();
             
             Assert.False(hasUnmarkedCoordinate);
         }

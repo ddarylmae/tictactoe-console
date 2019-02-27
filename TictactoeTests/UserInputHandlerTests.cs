@@ -29,20 +29,20 @@ namespace TicTacToeTests
             Assert.True(inputHandler.ValidateInput("q"));
         }
 
-        [Fact]
-        public void ShouldReturnTrueIfUserHasQuit()
-        {
-            var inputHandler = new UserInputHandler();
-            
-            Assert.True(inputHandler.HasUserQuit("q"));
-        }
-        
-        [Fact]
-        public void ShouldReturnFalseIfUserHasNotQuit()
-        {
-            var inputHandler = new UserInputHandler();
-            
-            Assert.False(inputHandler.HasUserQuit("1,1"));
-        }
+//        [Fact]
+//        public void ShouldReturnTrueIfUserHasQuit()
+//        {
+//            var inputHandler = new UserInputHandler();
+//            
+//            Assert.True(inputHandler.HasUserQuit("q"));
+//        }
+//        
+//        [Fact]
+//        public void ShouldReturnFalseIfUserHasNotQuit()
+//        {
+//            var inputHandler = new UserInputHandler();
+//            
+//            Assert.False(inputHandler.HasUserQuit("1,1"));
+//        }
     }
 }

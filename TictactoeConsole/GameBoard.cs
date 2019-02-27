@@ -44,7 +44,7 @@ namespace TicTacToeConsole
             return false;
         }
 
-        public bool CheckHasUnmarkedCoordinate()
+        public bool HasUnmarkedCoordinate()
         {
             var boardHasUnsetCoordinate = false;
             
