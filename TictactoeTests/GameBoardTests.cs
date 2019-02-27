@@ -9,9 +9,12 @@ namespace TicTacToeTests
         public void ShouldInitialiseWithEmptyBoard()
         {
             var board = new GameBoard();
-            
-            Assert.Equal(3, board.Board.GetLength(0));
-            Assert.Equal(3, board.Board.GetLength(1));
+
+            var rows = board.GetRowCount();
+            var columns = board.GetColumnCount();
+
+            Assert.Equal(3, rows);
+            Assert.Equal(3, columns);
         }
         
         [Fact]
@@ -19,17 +22,17 @@ namespace TicTacToeTests
         {
             var board = new GameBoard();
             
-            Assert.Equal('.', board.Board[0,0]);
-            Assert.Equal('.', board.Board[0,1]);
-            Assert.Equal('.', board.Board[0,2]);
+            Assert.Equal('.', board.GetElementAtCoordinate(1,1));
+            Assert.Equal('.', board.GetElementAtCoordinate(1, 2));
+            Assert.Equal('.', board.GetElementAtCoordinate(1,3));
             
-            Assert.Equal('.', board.Board[1,0]);
-            Assert.Equal('.', board.Board[1,1]);
-            Assert.Equal('.', board.Board[1,2]);
+            Assert.Equal('.', board.GetElementAtCoordinate(2,1));
+            Assert.Equal('.', board.GetElementAtCoordinate(2,2));
+            Assert.Equal('.', board.GetElementAtCoordinate(2,3));
             
-            Assert.Equal('.', board.Board[2,0]);
-            Assert.Equal('.', board.Board[2,1]);
-            Assert.Equal('.', board.Board[2,2]);
+            Assert.Equal('.', board.GetElementAtCoordinate(3,1));
+            Assert.Equal('.', board.GetElementAtCoordinate(3,2));
+            Assert.Equal('.', board.GetElementAtCoordinate(3,3));
         }
 
         [Fact]
@@ -56,11 +59,12 @@ namespace TicTacToeTests
         public void ShouldReturnFalseWhenBoardHasNoUnmarkedCoordinate()
         {
             var board = new GameBoard();
-            for (int row = 0; row < 3; row++)
+            // Mock?
+            for (int row = 1; row < 4; row++)
             {
-                for (int column = 0; column < 3; column++)
+                for (int column = 1; column < 4; column++)
                 {
-                    board.Board[row, column] = 'X';
+                    board.UpdateBoard(row, column, 'X');
                 }
             }
 
@@ -75,8 +79,9 @@ namespace TicTacToeTests
             var board = new GameBoard();
 
             board.UpdateBoard(1, 1, 'X');
-            
-            Assert.Equal('X', board.Board[0,0]);
+            var actualElement = board.GetElementAtCoordinate(1, 1);
+
+            Assert.Equal('X', actualElement);
         }
 
         [Fact]
@@ -93,7 +98,8 @@ namespace TicTacToeTests
         public void ShouldReturnFalseWhenUpdatingMarkedCoordinate()
         {
             var board = new GameBoard();
-            board.Board[0, 0] = 'X';
+            // Mock?
+            board.UpdateBoard(1,1,'X');
             
             var hasUpdatedBoard = board.UpdateBoard(1,1,'X');
             

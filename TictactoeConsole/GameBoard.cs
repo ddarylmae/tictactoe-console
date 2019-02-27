@@ -2,7 +2,7 @@ namespace TicTacToeConsole
 {
     public class GameBoard
     {
-        public char[,] Board;
+        private char[,] Board;
 
         public GameBoard()
         {
@@ -65,6 +65,16 @@ namespace TicTacToeConsole
         public char GetElementAtCoordinate(int row, int column)
         {
             return Board[row - 1, column - 1];
+        }
+
+        public int GetRowCount()
+        {
+            return Board.GetLength(0);
+        }
+
+        public int GetColumnCount()
+        {
+            return Board.GetLength(1);
         }
     }
 }
