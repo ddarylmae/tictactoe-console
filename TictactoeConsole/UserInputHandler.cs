@@ -18,9 +18,9 @@ namespace TicTacToeConsole
             return false;
         }
 
-//        public bool HasUserQuit(string input)
-//        {
-//            return input.Equals("q");
-//        }
+        public bool HasUserQuit(string input)
+        {
+            return input.Equals("q");
+        }
     }
 }

@@ -1,3 +1,5 @@
+using System;
+
 namespace TicTacToeConsole
 {
     public class GameBoard
@@ -75,6 +77,18 @@ namespace TicTacToeConsole
         public int GetColumnCount()
         {
             return Board.GetLength(1);
+        }
+
+        public void DisplayCurrentBoard()
+        {
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
+                {
+                    Console.Write($"{Board[row, column]} ");
+                }
+                Console.Write("\n");
+            }
         }
     }
 }

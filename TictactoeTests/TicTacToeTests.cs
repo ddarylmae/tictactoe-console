@@ -69,7 +69,6 @@ namespace TicTacToeTests
             
             Assert.False(game.GameEnded);
         }
-        
     }
     
 }

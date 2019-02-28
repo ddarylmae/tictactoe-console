@@ -6,7 +6,7 @@ namespace TicTacToeTests
     public class UserInputHandlerTests
     {
         [Fact]
-        public void ValidCoordinateInputShouldReturnTrue()
+        public void ShouldReturnTrueWhenCoordinateInputIsValid()
         {
             var inputHandler = new UserInputHandler();
             
@@ -14,7 +14,7 @@ namespace TicTacToeTests
         }
         
         [Fact]
-        public void InvalidCoordinateInputShouldReturnFalse()
+        public void ShouldReturnFalseWhenCoordinateInputIsInvalid()
         {
             var inputHandler = new UserInputHandler();
             
@@ -22,27 +22,39 @@ namespace TicTacToeTests
         }
 
         [Fact]
-        public void QLetterInputShouldReturnTrue()
+        public void ShouldReturnTrueWhenInputIsQ()
         {
             var inputHandler = new UserInputHandler();
             
             Assert.True(inputHandler.ValidateInput("q"));
         }
 
-//        [Fact]
-//        public void ShouldReturnTrueIfUserHasQuit()
-//        {
-//            var inputHandler = new UserInputHandler();
-//            
-//            Assert.True(inputHandler.HasUserQuit("q"));
-//        }
-//        
-//        [Fact]
-//        public void ShouldReturnFalseIfUserHasNotQuit()
-//        {
-//            var inputHandler = new UserInputHandler();
-//            
-//            Assert.False(inputHandler.HasUserQuit("1,1"));
-//        }
+        [Fact]
+        public void ShouldReturnFalseIfInvalidInput()
+        {
+            var inputHandler = new UserInputHandler();
+            
+            Assert.False(inputHandler.ValidateInput("aaa"));
+        }
+
+        [Fact]
+        public void ShouldReturnTrueIfUserHasQuit()
+        {
+            var inputHandler = new UserInputHandler();
+
+            var hasUserQuit = inputHandler.HasUserQuit("q");
+            
+            Assert.True(hasUserQuit);
+        }
+        
+        [Fact]
+        public void ShouldReturnFalseIfUserHasNotQuit()
+        {
+            var inputHandler = new UserInputHandler();
+
+            var hasUserQuit = inputHandler.HasUserQuit("1,1,");
+            
+            Assert.False(hasUserQuit);
+        }
     }
 }

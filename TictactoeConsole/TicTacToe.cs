@@ -1,3 +1,5 @@
+using System;
+
 namespace TicTacToeConsole
 {
     public class TicTacToe
@@ -7,10 +9,15 @@ namespace TicTacToeConsole
         public char Winner { get; set; }
         public bool GameEnded { get; set; }
 
+        public UserInputHandler InputHandler { get; set; }
+
         public TicTacToe()
         {
+            InputHandler = new UserInputHandler();
             CurrentPlayer = 'X';
             Winner = ' ';
+            
+            DisplayWelcomeToGame();
         }
 
         private void SwitchPlayer()
@@ -22,9 +29,17 @@ namespace TicTacToeConsole
         {
             SwitchPlayer();
             
-            GameEnded = input.Equals("q");
+            GameEnded = InputHandler.HasUserQuit(input);
             
             return false;
+        }
+
+        public void DisplayWelcomeToGame()
+        {
+            Console.WriteLine("Welcome to Tic Tac Toe!\n\n");
+            Console.WriteLine("Here's the current board:");
+            
+            Board.DisplayCurrentBoard();
         }
     }
 }
