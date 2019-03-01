@@ -22,5 +22,14 @@ namespace TicTacToeConsole
         {
             return input.Equals("q");
         }
+
+        public int[] GetCoordinatesFromInput(string input)
+        {
+            var values = input.Split(',');
+            return new[]
+            {
+                int.Parse(values[0]), int.Parse(values[1])
+            };
+        }
     }
 }

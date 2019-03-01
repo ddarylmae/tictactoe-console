@@ -69,6 +69,18 @@ namespace TicTacToeTests
             
             Assert.False(game.GameEnded);
         }
+        
+        [Fact]
+        public void ShouldNotEndGameWhenEntireBoardIsNotFilled()
+        {
+            var game = new TicTacToe();
+
+            game.MakeMove("1,1");
+            game.MakeMove("1,2");
+            game.MakeMove("1,3");
+            
+            Assert.False(game.GameEnded);
+        }
     }
     
 }

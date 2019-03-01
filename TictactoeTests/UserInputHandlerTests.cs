@@ -56,5 +56,15 @@ namespace TicTacToeTests
             
             Assert.False(hasUserQuit);
         }
+
+        [Fact]
+        public void ShouldReturnCoordinates()
+        {
+            var inputHandler = new UserInputHandler();
+
+            var coordinates = inputHandler.GetCoordinatesFromInput("1,1");
+            
+            Assert.Equal(2, coordinates.Length);
+        }
     }
 }

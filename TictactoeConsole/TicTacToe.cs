@@ -13,11 +13,12 @@ namespace TicTacToeConsole
 
         public TicTacToe()
         {
+            Board = new GameBoard();
             InputHandler = new UserInputHandler();
             CurrentPlayer = 'X';
             Winner = ' ';
             
-            DisplayWelcomeToGame();
+//            DisplayWelcomeToGame();
         }
 
         private void SwitchPlayer()
@@ -27,11 +28,28 @@ namespace TicTacToeConsole
 
         public bool MakeMove(string input)
         {
-            SwitchPlayer();
-            
-            GameEnded = InputHandler.HasUserQuit(input);
+            if (InputHandler.HasUserQuit(input))
+            {
+                GameEnded = true;
+                return false;
+            }
+
+            var coordinates = InputHandler.GetCoordinatesFromInput(input);
+            if (!Board.IsCoordinateMarked(coordinates[0], coordinates[1]))
+            {
+                Board.UpdateBoard(coordinates[0], coordinates[1], CurrentPlayer);
+                SwitchPlayer();
+                return true;
+            }
+            GameEnded = Board.HasUnmarkedCoordinate();
             
             return false;
+        }
+
+        private void FillCoordinate(string input)
+        {
+            var something = InputHandler.ValidateInput(input);
+//            Board.UpdateBoard()
         }
 
         public void DisplayWelcomeToGame()
