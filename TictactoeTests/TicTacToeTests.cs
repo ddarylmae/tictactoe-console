@@ -71,6 +71,26 @@ namespace TicTacToeTests
         }
         
         [Fact]
+        public void ShouldEndGameWhenEntireBoardIsFilled()
+        {
+            var game = new TicTacToe();
+
+            game.MakeMove("1,1");
+            game.MakeMove("1,2");
+            game.MakeMove("1,3");
+            
+            game.MakeMove("2,1");
+            game.MakeMove("2,2");
+            game.MakeMove("2,3");
+            
+            game.MakeMove("3,1");
+            game.MakeMove("3,2");
+            game.MakeMove("3,3");
+            
+            Assert.True(game.GameEnded);
+        }
+        
+        [Fact]
         public void ShouldNotEndGameWhenEntireBoardIsNotFilled()
         {
             var game = new TicTacToe();

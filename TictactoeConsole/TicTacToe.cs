@@ -35,13 +35,14 @@ namespace TicTacToeConsole
             }
 
             var coordinates = InputHandler.GetCoordinatesFromInput(input);
+            
             if (!Board.IsCoordinateMarked(coordinates[0], coordinates[1]))
             {
                 Board.UpdateBoard(coordinates[0], coordinates[1], CurrentPlayer);
                 SwitchPlayer();
+                GameEnded = !Board.HasUnmarkedCoordinate();
                 return true;
             }
-            GameEnded = Board.HasUnmarkedCoordinate();
             
             return false;
         }
