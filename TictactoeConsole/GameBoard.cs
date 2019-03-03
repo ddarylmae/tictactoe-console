@@ -6,8 +6,11 @@ namespace TicTacToeConsole
     {
         private char[,] Board;
 
+        public char[] BoardOneD { get; set; }
+
         public GameBoard()
         {
+            BoardOneD = new char[9];
             Board = new char[3,3];
             for (int row = 0; row < 3; row++)
             {
@@ -89,6 +92,11 @@ namespace TicTacToeConsole
                 }
                 Console.Write("\n");
             }
+        }
+
+        public int GetBoardSize()
+        {
+            return BoardOneD.Length;
         }
     }
 }

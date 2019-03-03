@@ -10,11 +10,9 @@ namespace TicTacToeTests
         {
             var board = new GameBoard();
 
-            var rows = board.GetRowCount();
-            var columns = board.GetColumnCount();
+            var boardSize = board.GetBoardSize();
 
-            Assert.Equal(3, rows);
-            Assert.Equal(3, columns);
+            Assert.Equal(9, boardSize);
         }
         
         [Fact]
