@@ -98,5 +98,10 @@ namespace TicTacToeConsole
         {
             return BoardOneD.Length;
         }
+
+        public char GetElementAt(int index)
+        {
+            return '.';
+        }
     }
 }

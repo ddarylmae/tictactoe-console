@@ -19,18 +19,18 @@ namespace TicTacToeTests
         public void ShouldInitialiseWithDots()
         {
             var board = new GameBoard();
+
+            Assert.Equal('.', board.GetElementAt(0));
+            Assert.Equal('.', board.GetElementAt(1));
+            Assert.Equal('.', board.GetElementAt(2));
             
-            Assert.Equal('.', board.GetElementAtCoordinate(1,1));
-            Assert.Equal('.', board.GetElementAtCoordinate(1, 2));
-            Assert.Equal('.', board.GetElementAtCoordinate(1,3));
+            Assert.Equal('.', board.GetElementAt(3));
+            Assert.Equal('.', board.GetElementAt(4));
+            Assert.Equal('.', board.GetElementAt(5));
             
-            Assert.Equal('.', board.GetElementAtCoordinate(2,1));
-            Assert.Equal('.', board.GetElementAtCoordinate(2,2));
-            Assert.Equal('.', board.GetElementAtCoordinate(2,3));
-            
-            Assert.Equal('.', board.GetElementAtCoordinate(3,1));
-            Assert.Equal('.', board.GetElementAtCoordinate(3,2));
-            Assert.Equal('.', board.GetElementAtCoordinate(3,3));
+            Assert.Equal('.', board.GetElementAt(6));
+            Assert.Equal('.', board.GetElementAt(7));
+            Assert.Equal('.', board.GetElementAt(8));
         }
 
         [Fact]
